@@ -8,6 +8,9 @@ class Controller {
     on(eventName, listener) {
         this.eventEmitter.on(eventName, listener)
     }
+    once(eventName, listener) {
+        this.eventEmitter.once(eventName, listener)
+    }
     resolve(value) {
         this.eventEmitter.emit('resolve', value);
     }

@@ -13,11 +13,11 @@ function createControlledAsync(asyncFunction, options = { timeout: 0 }) {
         clearTimeout(timeoutId);
         resolve(value);
       });
-      controller.on("resolve", (value) => {
+      controller.once("resolve", (value) => {
         clearTimeout(timeoutId);
         resolve(value);
       });
-      controller.on("reject", (value) => {
+      controller.once("reject", (value) => {
         clearTimeout(timeoutId);
         resolve(value);
       });
